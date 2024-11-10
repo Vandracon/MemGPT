@@ -10,7 +10,7 @@ class Settings(BaseSettings):
 
     memgpt_dir: Optional[Path] = Field(Path.home() / ".memgpt", env="MEMGPT_DIR")
     debug: Optional[bool] = False
-    server_pass: Optional[str] = None
+    server_pass: Optional[str] = "password"
     pg_db: Optional[str] = None
     pg_user: Optional[str] = None
     pg_password: Optional[str] = None

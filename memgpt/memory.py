@@ -1,4 +1,5 @@
 import datetime
+import os
 import uuid
 import warnings
 from abc import ABC, abstractmethod
@@ -100,7 +101,7 @@ class BaseMemory:
 
 class ChatMemory(BaseMemory):
 
-    def __init__(self, persona: str, human: str, limit: int = 2000):
+    def __init__(self, persona: str, human: str, limit: int = os.getenv("MEMGPT_CHAT_MEMORY_BANK_CHARACTER_LIMIT") or 2000):
         # TODO: clip if needed
         # if persona and len(persona) > limit:
         #    warnings.warn(f"Persona exceeds {limit} character limit (requested {len(persona)}).")
